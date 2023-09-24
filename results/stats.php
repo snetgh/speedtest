@@ -9,7 +9,7 @@ header('Pragma: no-cache');
 <!DOCTYPE html>
 <html>
 <head>
-<title>step network - Stats</title>
+<title>Step Network - Stats</title>
 <style type="text/css">
 	html,body{
 		margin:0;

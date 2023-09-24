@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
 <link rel="shortcut icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
@@ -11,17 +27,8 @@ function I(i){return document.getElementById(i);}
 //LIST OF TEST SERVERS. See documentation for details if needed
 var SPEEDTEST_SERVERS=[
 	{	//this is my demo server, remove it
-		name:"Step Network Server (Accra)", //user friendly name for the server
-		server:"//fi.openspeed.org/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-		dlURL:"garbage.php",  //path to download test on this server (garbage.php or replacement)
-		ulURL:"empty.php",  //path to upload test on this server (empty.php or replacement)
-		pingURL:"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-		getIpURL:"getIP.php"  //path to getIP on this server (getIP.php or replacement)
-	},
-
-{	//this is my demo server, remove it
-		name:"Step Network Server (Donkorkrom)", //user friendly name for the server
-		server:"//fi.openspeed.org/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
+		name:"Step Network Server, Accra", //user friendly name for the server
+		server:"//speedtest.snetgh.net/backend/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
 		dlURL:"garbage.php",  //path to download test on this server (garbage.php or replacement)
 		ulURL:"empty.php",  //path to upload test on this server (empty.php or replacement)
 		pingURL:"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
@@ -29,13 +36,34 @@ var SPEEDTEST_SERVERS=[
 	},
 
 	{	//this is my demo server, remove it
-		name:"Old Speedtest Demo Server",
-		server:"//mpotdemo.fdossena.com/",
-		dlURL:"garbage.php",
-		ulURL:"empty.php",
-		pingURL:"empty.php",
-		getIpURL:"getIP.php"
-	}
+		name:"Passion Technology Server, Samreboi", //user friendly name for the server
+		server:"https://speedtest.ptechgh.net/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
+		dlURL:"garbage.php",  //path to download test on this server (garbage.php or replacement)
+		ulURL:"empty.php",  //path to upload test on this server (empty.php or replacement)
+		pingURL:"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
+		getIpURL:"getIP.php"  //path to getIP on this server (getIP.php or replacement)
+	},
+
+
+	{	//this is my demo server, remove it
+		name:"PHD Server 1,Administration", //user friendly name for the server
+		server:"//stest2.phskwahu.org/backend/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
+		dlURL:"garbage.php",  //path to download test on this server (garbage.php or replacement)
+		ulURL:"empty.php",  //path to upload test on this server (empty.php or replacement)
+		pingURL:"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
+		getIpURL:"getIP.php"  //path to getIP on this server (getIP.php or replacement)
+	},
+
+
+	{	//this is my demo server, remove it
+		name:"PHD Server 2,I.T Unit", //user friendly name for the server
+		server:"//stest.phskwahu.org/backend/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
+		dlURL:"garbage.php",  //path to download test on this server (garbage.php or replacement)
+		ulURL:"empty.php",  //path to upload test on this server (empty.php or replacement)
+		pingURL:"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
+		getIpURL:"getIP.php"  //path to getIP on this server (getIP.php or replacement)
+	},
+
 	//add other servers here, comma separated
 ];
 
@@ -380,7 +408,7 @@ function initUI(){
 <title>Speedtest by Step Network</title>
 </head>
 <body onload="initServers()">
-<h1>Speedtest by Step Network</h1>
+<h1>Step Network Speedtest</h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
@@ -388,7 +416,7 @@ function initUI(){
 	<div id="startStopBtn" onclick="startStop()"></div>
 	<!--<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>-->
 	<div id="serverArea">
-		Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+		Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select> 
 	</div>
 	<div id="test">
 		<div class="testGroup">
@@ -427,7 +455,7 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
-<a href="https://snetgh.net"><i>Powered by Step Network</i></a>
+<a href="https://snetgh.org/donate.php"><i>Powered by Step Network</i></a>
 </div>
 <div id="privacyPolicy" style="display:none">
     <h2>Privacy Policy</h2>
